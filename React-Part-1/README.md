@@ -1,4 +1,4 @@
-##### React-Tutorial
+# React-Tutorial
 
 What is React ?
 
@@ -8,14 +8,14 @@ Why Should We learn?
 
 Maintained by FB,More starters on Github,Hug Community(Stack Overflow),In Demand Skill Set
 
-# Techinical Aspects:-
+## Techinical Aspects:-
 
 ->Component Based Arch (Header,Footer,MainContent,SUBNAV)
 ->ReUsable Code
 ->Declarative 
 ->Virtual DOM
 
-# Prerequisite:-
+## Prerequisite:-
 
 1.JavaScript, HTML5, and CSS. 
 2.ES6(ECMAScript)
@@ -41,7 +41,7 @@ Maintained by FB,More starters on Github,Hug Community(Stack Overflow),In Demand
 			- Redux
 			- Utilities
 			
-# Create-react-app
+## Create-react-app
 
 npx create-react-app my-app
 cd my-app
@@ -53,14 +53,14 @@ npm start
 	npm install create-react-app -globally
 	npm  create-react-app <my-app>
 
-# Folder Strecture
+## Folder Strecture
 
 ->Package.json  (will have all dependencies)
 ->node_modules
 ->Public Folder
 ->SRC Folder
 
-# React Features
+## React Features
 
 	- JSX
 	- Components
@@ -69,7 +69,7 @@ npm start
 	- Simplicity
 	- Performance
 
-# Advantage of ReactJS
+## Advantage of ReactJS
 
 	- Creating Dynamic Web Applications Becomes Easier
 	- Reusable Components
@@ -79,7 +79,7 @@ npm start
 	- The Benefit of Having JavaScript Library
 	- Scope for Testing the Codes
 
-# Component
+## Component
 
 Component is a part of UI, can be reuse
 
