@@ -31,7 +31,7 @@ Maintained by FB,More starters on Github,Hug Community(Stack Overflow),In Demand
 			- template literals
 			- default perameters
 			- object literals
-            - rest and spread operations 
+			- rest and spread operations 
 			- distructing assignment
 
 3.React from Scrach
