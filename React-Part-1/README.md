@@ -89,14 +89,14 @@ Component is a part of UI, can be reuse
 	import React from 'react'
 	
 	function Greet(){
-	return <h1>Hellow World</h1>
+	return <>Hellow World<>
 	}
 	
 	export default Greet
 	
 	or
 	
-	export const Greet = () => <h1>Hello World</h1>
+	export const Greet = () => <>Hello World<>
 	
 	*/
 	
