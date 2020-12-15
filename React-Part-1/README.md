@@ -88,7 +88,7 @@ Component is a part of UI, can be reuse
 	
 	import React from 'react'
 	function Greet(){
-	return <>Hellow World<>
+		return <>Hellow World<>
 	}
 	export default Greet
 	
@@ -98,16 +98,14 @@ Component is a part of UI, can be reuse
 	
 2. Statefull class components
 	
-import React from 'react'
-import Component from 'react'
+	import React from 'react'
+	import Component from 'react'
+	class Welcome extends React.Component{    
+		render(){
 
-class Welcome extends React.Component{
-    
-    render(){
-
-        return <h1>Hello Class component</h1>
-    }
-}
+			return <h1>Hello Class component</h1>
+		}
+	}
 
 export default Welcome
 
