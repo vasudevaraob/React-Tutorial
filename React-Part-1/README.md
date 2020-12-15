@@ -85,20 +85,16 @@ Component is a part of UI, can be reuse
 
 1. Stateless functional components
 	- create first functional components	
-	/**
-	import React from 'react'
 	
+	import React from 'react'
 	function Greet(){
 	return <>Hellow World<>
 	}
-	
 	export default Greet
 	
-	or
+	---or---
 	
 	export const Greet = () => <>Hello World<>
-	
-	*/
 	
 2. Statefull class components
 	
