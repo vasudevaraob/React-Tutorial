@@ -24,7 +24,7 @@ class MessageState extends Component{
                 
                 {this.state.displayBio ? (
                     <div>
-                        <p><h4>React is one of the hot technology in the UI development for front end, which is supported by FaceBook</h4></p>
+                        <p><h4>React is one of the hot technology in the UI development for front end, which is supported by </h4></p>
                         <button onClick={this.toggleDisplayBio}> Show Less </button>
                     </div>
                 ):(  

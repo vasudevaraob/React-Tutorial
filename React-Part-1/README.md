@@ -100,6 +100,7 @@ Component is a part of UI, can be reuse
 	
 	import React from 'react'
 	import Component from 'react'
+	
 	class Welcome extends React.Component{    
 		render(){
 
@@ -149,14 +150,16 @@ State will change the state of your object when ever doing action or event
 
 	- setState()---> to set the state
 	- getInitialState() --> To set an initial state before any interaction occurs, we need to use the getInitialState() method.
+	- prevState()
 
 Defining State
+
 To define a state, you have to first declare a default set of values for defining the component's initial state. 
 To do this, add a class constructor which assigns an initial state using this.state. The 'this.state' property can be rendered inside render() method.
 
 Message.json
 
- constructor(){
+	constructor(){
         super()
 
         this.state = {
@@ -187,8 +190,102 @@ Props                               							State
 8.	Props are external and controlled by whatever 				8. The State is internal and controlled by the React Component itself.
 	renders the component.	
 
+State with callback function:-
+
+callback function is kind of arrow function , which will execute after setState().
+
+	increse(){
+        this.setState({
+            increseval:this.state.increseval+1
+        },()=>(console.log(this.state.increseval)))
+
+        console.log(this.state.increseval)
+    }
+
+
+##  DeStrecturing Props and State
+
+const Greet = (props) => {
+
+    //props.name='Avengers'--> it will never allow for reassignment
+
+    console.log(props)
+    return (
+        <>
+            <>Hello {props.name}</>
+            {props.children}
+        </>
+    )
+}
+
+1. Destrecture at function perameter itself
+
+	const Greet = ({name,children}) => {
 	
+    console.log(name)
+    return (
+        <div>
+            <h1>Hello {name}</h1>
+            {children}
+        </div>
+		)
+	}
+
+2. Destrecture in the function body
+
+	const Greet = props => {
+	const {name,children} = props  ---> defined here  for function component
+	//const {name,children} = this.props
+    return (
+        <div>
+            <h1>Hello {name}</h1>
+            {children}
+        </div>
+		)
+	}
+
+## React Props Validation
+
+	React components used special property PropTypes that help you to catch bugs by validating data types of values passed through props, 
+	although it is not necessary to define components with propTypes.However, if you use propTypes with your components, it helps you to avoid unexpected bugs.
 	
+	** when sending any property type it will get working throght console
+
+
+## Event Handelling
+
+	**when user interacts with UI Events are fired (muse click, mouse over , key events,change events)
+
+Ex:function
+	function FunctionClick() {
+
+    function clickHandeler(){
+        console.log("Button clicked")
+
+    }
+    return (
+        <div>
+            <button onClick={clickHandeler}>Click</button>  *** we should not keep that function with "()" clickHandeler() that will trigger function if adding that
+        </div>
+    )
+	}
+Ex:class
+
+
+
+
+
+
+
+
+##### Shortcuts
+
+ctrl+k+c  - comment
+ctrl+K+U  - uncomment
+
+rce- to create class component
+rconst - to create constructor
+rfce- to create functional component
 
 
 
