@@ -27,8 +27,21 @@ Maintained by FB,More starters on Github,Hug Community(Stack Overflow),In Demand
 			- reduce()
 	ES6:- 
 			- let&const
+				Let--> have block scope
 			- ArrowFunctions
 			- template literals
+				
+				let user = 'Vasudev'
+				let greet = 'Welcome to '+user+'New Year' --> **1
+				let greet = `Welcome to ${user} New Year` --> ** using String Templates
+				
+				let greet = `Welcome to ${user} New Year
+						this is 2nd line
+				this is 3rd line . . . . so on...
+				`
+				console.log(greet)
+				
+				
 			- default perameters
 			- object literals
 			- rest and spread operations 
@@ -225,7 +238,7 @@ const Greet = (props) => {
     console.log(name)
     return (
         <div>
-            <h1>Hello {name}</h1>
+            <>Hello {name}</>
             {children}
         </div>
 		)
@@ -238,7 +251,7 @@ const Greet = (props) => {
 	//const {name,children} = this.props
     return (
         <div>
-            <h1>Hello {name}</h1>
+            <>Hello {name}</>
             {children}
         </div>
 		)
@@ -271,6 +284,166 @@ Ex:function
 	}
 Ex:class
 
+	clickHandeler(){
+        console.log('Click me class component')
+    }
+    render() {
+        return (
+            <div>
+                <button onClick={this.clickHandeler}>Click me</button>
+            </div>
+        )
+    }
+
+## Binding with Event Header
+
+below are the diff ways to achive event binding in react
+
+	1. bind(this) and using 
+	2. arrow function
+	3. Binding in the class constrector
+	4. ArrowFunction as a class property
+
+{/* <button onClick={this.bindingEventClick.bind(this)}>ClickEventBinding</button> */}  *** using bind(this)
+    <button onClick={()=>this.bindingEventClick()}>ClickEventBinding</button>           *** using arrow-function
+	<button onClick={this.bindingEventClick}>ClickEventBinding</button>                 *** with class constrector/ArrowFunction as class property
+
+	constructor(props) {
+        super(props)
+    
+        this.state = {
+             message:'Hai Guys'
+        }
+		this.bindingEventClick = this.bindingEventClick.bind(this) ----> *** binding in the class constrector
+    }
+
+    bindingEventClick(){    
+        this.setState({
+            message:'GoodBye'
+        })
+        console.log('in binding event')
+    }
+	
+	bindingEventClick = () =>{     ---->  *** Approach 4 with ArrowFunction
+        this.setState({
+            message:'GoodBye'
+        })
+    }
+    
+    render() {
+        return (
+            <div>
+                <h1>{this.state.message}</h1>
+             {/* <button onClick={this.bindingEventClick.bind(this)}>ClickEventBinding</button> */}  ---> **1
+             <button onClick={()=>this.bindingEventClick()}>ClickEventBinding</button> */}  ---> ***2
+			 <button onClick={this.bindingEventClick}>ClickEventBinding</button>  ---> **3 & 4
+            </div>
+        )
+
+
+## Methods as Props
+
+ 1. Methods as props from chaild to parent
+
+Parent:-
+
+	class ParentComponent extends Component {
+
+	constructor(props) {
+    super(props)
+
+    this.state = {
+         parentName:'Parent'
+    }
+    this.greetParent=this.greetParent.bind(this)
+	}
+
+	greetParent(){
+        alert('Welcome'+this.state.parentName)
+	}
+
+
+    render() {
+        return (
+            <div>
+                <ChildComponent greetHandeler={this.greetParent}></ChildComponent>  ** greetHandeler={this.greetParent} passing method as attribute 
+            </div>
+        )
+    }
+	}
+
+Child:-
+
+	function ChildComponent(props) {  ** have to pass props
+		return (
+			<div>
+				<button onClick={props.greetHandeler}>Greet Parent</button>  ** calling the attribute using props
+			</div>
+		)
+	}
+
+ 2. Sending props from child to parent
+ 
+	function ChildComponent(props) {  ** have to pass props
+		return (
+			<div>
+				<button onClick={()=> props.greetHandeler(child)}>Greet Parent</button>  ** calling the attribute using props
+			</div>
+		)
+	}
+	
+	parent function change
+	
+	greetParent(childName){
+        alert(`Welcome ${this.state.parentName} to ${childName}`)
+	}
+	
+## Conditional Rendering
+
+When ever we want render some component based on some condition can go with this
+	- if/else
+	- ternary operator
+	- logical && operator
+	- switch case operator
+	- Conditional Rendering with enums
+	
+## List Rendering
+
+to render list of items using Map method its from js only
+
+const names = ['Vasudev','Ramadevi','Cheshvika','Venkatamma','Visweswara Rao']
+const namesList = names.map(name=><ul>{name}</ul>)
+
+return (<div>{namesList}</div>)
+
+1. List and keys should be defined for List while rendering that List objects, will get warnings while consuming
+	- A key is a special string attribute you need to include when creating list of elements
+	- keys will give the elements stable identity
+	- keys helps react identify which items changed or added or removed
+	
+2. Index as a Key  - try to avoid index as key
+
+## Styling React Components
+
+	- CSS Style sheets  -> defining in style.css and write some styles
+	- Inline Styling  -> inline styling
+	- CSS Modules
+		CSS Module is another way of adding styles to your application. It is a CSS file where all class names and animation names are scoped locally by default. 
+		It is available only for the component which imports it, means any styling you add can never be applied to other components without your permission, 
+		and you never need to worry about name conflicts. You can create CSS Module with the .module.css extension like a myStyles.module.css name.
+	- CSS in JS Library
+	
+## React Forms
+
+React offers a stateful, reactive approach to build a form. The component rather than the DOM usually handles the React form. 
+In React, the form is usually implemented by using controlled components.
+
+There are mainly two types of form input in React.
+
+	1. Uncontrolled component - *** similar to traditional HTML  DOM will handle the data & have to use the ref here
+			<input type="text" ref={this.input} /> 
+			
+	2. Controlled component -  *** here will be controlled by component rather then DOM
 
 
 

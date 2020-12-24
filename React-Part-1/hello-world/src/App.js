@@ -9,13 +9,32 @@ import Count from './components/Count';
 import PropsValidation from './components/PropsValidation';
 import FunctionClick from './components/FunctionClick';
 import ClassClick from './components/ClassClick';
+import EventBinding from './components/EventBinding';
+import ParentComponent from './components/ParentComponent';
+import EventBindingExe from './components/EventBindingExe';
+import ConditionalRendering from './components/ConditionalRendering';
+import ListNames from './components/ListNames';
+import IndexKey from './components/IndexKey';
+import StyleSheet from './components/StyleSheet';
+import InLineStyling from './components/StylingExemples/InLineStyling';
 
 function App() {
   return (
     <div className="App">
 
-      <FunctionClick></FunctionClick>
-      <ClassClick></ClassClick>
+      <InLineStyling></InLineStyling>
+
+      
+      {/* <StyleSheet></StyleSheet> */}
+      {/* <IndexKey></IndexKey> */}
+      {/* <ListNames></ListNames> */}
+      {/* <ConditionalRendering></ConditionalRendering> */}
+      {/* <EventBindingExe></EventBindingExe> */}
+      {/* <ParentComponent></ParentComponent> */}
+
+      {/* <EventBinding></EventBinding> */}
+      {/* <FunctionClick></FunctionClick>
+      <ClassClick></ClassClick> */}
       {/* <Greet name='gani'>
         <p>Hello Hero</p>
       </Greet>
