@@ -445,10 +445,11 @@ There are mainly two types of form input in React.
 			
 	2. Controlled component -  *** here will be controlled by component rather then DOM
 
-
-
-
-
+		handelChangeInput = (event) => {
+		this.setState({user:event.target.value})
+		}
+	
+		<input type='text' value={this.state.user} onChange={this.handelChangeInput}></input>
 
 
 ##### Shortcuts

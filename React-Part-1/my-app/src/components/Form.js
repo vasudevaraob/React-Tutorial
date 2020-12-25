@@ -34,9 +34,9 @@ handelSubmit= event =>{
     render() {
         return (
             <form onSubmit={this.handelSubmit}>
-                <div>
+                <div class="form-group">
                     <label>UserName:</label>
-                    <input type='text' value={this.state.user} onChange={this.handelChangeInput}></input>
+                    <input type='text' class="form-control" value={this.state.user} onChange={this.handelChangeInput}></input>
                 </div>
                 <div>
                     <label>Comments </label>
