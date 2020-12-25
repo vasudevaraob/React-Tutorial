@@ -455,10 +455,13 @@ There are mainly two types of form input in React.
 ##### Shortcuts
 
 ctrl+k+c  - comment
+
 ctrl+K+U  - uncomment
 
 rce- to create class component
+
 rconst - to create constructor
+
 rfce- to create functional component
 
 
