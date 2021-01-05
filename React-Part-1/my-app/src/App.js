@@ -1,10 +1,17 @@
 import logo from './logo.svg';
 import './App.css';
 import Form from './components/Form';
+import FormStrap from './components/FormStrap';
+import LifeCycleA from './components/LifeCycleA';
+import FragmentDemo from './components/FragmentDemo';
+import PureComp from './components/PureComp';
+import RefDemo from './components/RefDemo';
+import Hero from './components/Hero';
+import ErrorBoundry from './components/ErrorBoundry';
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -19,9 +26,17 @@ function App() {
           Learn React
         </a>
       </header> */}
+     {/* <Form></Form> */}
+     {/* <FormStrap></FormStrap> */}
+     {/* <LifeCycleA></LifeCycleA> */}
+     {/* <FragmentDemo></FragmentDemo> */}
+     {/* <PureComp></PureComp> */}
 
-      <h1>Hello World</h1>
-     <Form></Form>
+     {/* <RefDemo></RefDemo> */}
+     <Hero heroName='Gani'></Hero>
+     <ErrorBoundry>
+     <Hero heroName='Joker'></Hero>
+     </ErrorBoundry>
     </div>
   );
 }

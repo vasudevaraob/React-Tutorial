@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+label:after {
+  content: ": ";
+}
+label {
+  background-color: pink;
+  color: black;
+  font-weight: bold;
+  padding: 4px;
+  text-transform: uppercase;
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: xx-small;
+}
+
+.content {
+  max-width: 900px;
+  margin: auto;
+  max-height: ;
+}

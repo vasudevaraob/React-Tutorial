@@ -450,9 +450,141 @@ There are mainly two types of form input in React.
 		}
 	
 		<input type='text' value={this.state.user} onChange={this.handelChangeInput}></input>
+		
+
+## Add Bootstrap to React
+
+-> install Bootstrap using  $ npm install react-bootstrap bootstrap --save  
+
+-> add lib in index.js import 'bootstrap/dist/css/bootstrap.min.css';  
+
+-> the use components ware ever you want  import { SplitButton, Dropdown } from 'react-bootstrap';
 
 
-##### Shortcuts
+## LifeCycle Methods
+
+	1. Initial Phase
+	2. Mounting Phase
+	3. Updating Phase
+	4. Unmounting Phase
+
+1. Initial Phase :- It is the birth phase of the lifecycle of a ReactJS component. Here, the component starts its journey on a way to the DOM
+
+		A. getDefaultProps()
+		
+			It is used to specify the **default value of this.props**. It is invoked before the creation of the component or any props from the parent is passed into it.
+		
+		B. getInitialState()
+		
+			It is used to specify the **default value of this.state**. It is invoked before the creation of the component.
+
+2. Mounting Phase :- In this phase, the instance of a component is created and inserted into the DOM. It consists of the following methods.
+
+		A. componentWillMount()
+
+			This is invoked immediately **before** a component gets rendered into the DOM. In the case, when you call setState() inside this method, the component will not re-render.
+		
+		B. componentDidMount()
+			
+			This is invoked immediately **after** a component gets rendered and placed on the DOM. Now, you can do any DOM querying operations.
+		
+		C. render()
+			
+			This method is defined in each and every component. It is **responsible for returning a single root HTML node element**. If you don't want to render anything, you can return a null or false value.
+			
+3. Updating Phase :- It is the next phase of the lifecycle of a react component. Here, we get new Props and change State. 
+			This phase also allows to handle user interaction and provide communication with the components hierarchy. 
+			The main aim of this phase is to ensure that the component is displaying the latest version of itself. 
+			Unlike the Birth or Death phase, this phase repeats again and again. This phase consists of the following methods.
+
+		A. componentWillRecieveProps()
+
+			It is invoked when a component receives new props. If you want to update the state in response to prop changes, you should compare this.props and nextProps to perform state transition by using this.setState() method.
+		
+		B. shouldComponentUpdate()
+			
+			It is invoked when a component decides any changes/updation to the DOM. It allows you to control the component's behavior of updating itself. If this method returns true, the component will update. Otherwise, the component will skip the updating.
+
+		C. componentWillUpdate()
+			
+			It is invoked just before the component updating occurs. Here, you can't change the component state by invoking this.setState() method. It will not be called, if shouldComponentUpdate() returns false.
+		
+		D. render()
+			
+			It is invoked to examine this.props and this.state and return one of the following types: React elements, Arrays and fragments, Booleans or null, String and Number. If shouldComponentUpdate() returns false, the code inside render() will be invoked again to ensure that the component displays itself properly.
+
+		E. componentDidUpdate()
+			
+			It is invoked immediately after the component updating occurs. In this method, you can put any code inside this which you want to execute once the updating occurs. This method is not invoked for the initial render.
+
+4. Unmounting Phase :- It is the final phase of the react component lifecycle. It is called when a component instance is destroyed and unmounted from the DOM. This phase contains only one method and is given below.
+
+		A. componentWillUnmount()
+			
+			This method is invoked immediately before a component is destroyed and unmounted permanently. It performs any necessary cleanup related task such as invalidating timers, event listener, canceling network requests, or cleaning up DOM elements. If a component instance is unmounted, you cannot mount it again.
+
+## Technical Point
+
+	1. Mounting  **When Instance of a component is created and inserted into DOM
+			 
+			- constrector() - its a special function that will get called whenever a new component is created. 
+							  it will initialize state & Binding the event handlers.
+							  Do not cause side effects . Ex HTTP Request
+							  have to define super(props) to call parent constructor, Directly override this.state 
+							  
+			- static getDerivedStateFromProps() -
+							  rarely used method in React
+			- render() - this is for render UI for html
+			- componentDidMount()
+	
+	2. Updating  **When a component is re-render as a result of changes to either props or state
+			
+			---> methods under static getDerivedStateFromProps,shouldComponentUpdate,render,getSnapshortBeforeUpdate,componentDidMount
+			
+	3. Unmounting **When a component is removed from DOM
+		
+			---> componentWillMount
+	
+	4. Error Handling **When there is a error during the rendering , in a life cycle methods or in the constructor of any child component
+	
+			---> getDerivedStateFromError, and componentDidCatch
+ 
+
+
+#### Advanced Concepts of React
+
+# Fragments
+
+its just avoid <div> tags can go for <React.Fragments> or shorthand syntax <> will not allow any key </>
+
+<React.Fragments>
+	<h1>Hello</h1>
+</React.Fragments>
+
+# Pure Components (relates to class)
+
+# Memo components (relates to function)
+
+# Ref's in react
+
+using this auto fucs will go to input text fields while in forms 
+
+ this.inputRef = React.createRef()  --> USING THIS
+ 
+ call back ref --> approach 2
+ 
+# Portals
+
+# Error Boundary
+
+A class component that implements either one or both of the lifecycle methods getDerivedStateFromError or componentDidCatch becomes an error boundary
+
+# Higher order component
+
+
+
+
+### Shortcuts
 
 ctrl+k+c  - comment
 
@@ -463,6 +595,8 @@ rce- to create class component
 rconst - to create constructor
 
 rfce- to create functional component
+
+rpce- to create Pure Component
 
       
 

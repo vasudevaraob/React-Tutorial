@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import Button from 'react-bootstrap/Button';
+import { Button } from 'reactstrap';
+
 
 class Form extends Component {
 constructor(props) {
@@ -50,7 +51,7 @@ handelSubmit= event =>{
                         <option>Angular</option>
                     </select>
                 <div>
-                    <button type='submit'>Submit Button</button>
+                    <Button type='submit'>Submit</Button>
                 </div>
                 </div>
             </form>
