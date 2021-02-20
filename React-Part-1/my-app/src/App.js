@@ -8,6 +8,8 @@ import PureComp from './components/PureComp';
 import RefDemo from './components/RefDemo';
 import Hero from './components/Hero';
 import ErrorBoundry from './components/ErrorBoundry';
+import ClickCounter from './components/ClickCounter';
+import HoverCounter from './components/HoverCounter';
 
 function App() {
   return (
@@ -33,10 +35,12 @@ function App() {
      {/* <PureComp></PureComp> */}
 
      {/* <RefDemo></RefDemo> */}
-     <Hero heroName='Gani'></Hero>
+     {/* <Hero heroName='Gani'></Hero>
      <ErrorBoundry>
      <Hero heroName='Joker'></Hero>
-     </ErrorBoundry>
+     </ErrorBoundry> */}
+     <ClickCounter></ClickCounter>
+     <HoverCounter></HoverCounter>
     </div>
   );
 }

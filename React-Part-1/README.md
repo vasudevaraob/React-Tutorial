@@ -581,6 +581,14 @@ A class component that implements either one or both of the lifecycle methods ge
 
 # Higher order component
 
+Why Higher order components?
+
+When ever the component functionality needed for re-use go for this higher order
+
+HOC:- A pattern where a function takes a component as a argument and returns a new component
+
+const  newComponent = higherOrderComponent (originalComponent)
+
 
 
 
