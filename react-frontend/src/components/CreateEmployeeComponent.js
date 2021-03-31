@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import EmployeeService from '../services/EmployeeService'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
+
+toast.configure()
 class CreateEmployeeComponent extends Component {
 
     constructor(props) {
@@ -48,11 +52,13 @@ class CreateEmployeeComponent extends Component {
                                  console.log('employee => '+JSON.stringify(employee))
                              } 
                        )
+                       toast.success("Added Employee successfully!",{position: toast.POSITION.TOP_CENTER,autoClose: 8000});
             } else {
                 EmployeeService.updateEmployee(employee, this.state.id).then( res => {
                     this.props.history.push('/employees');
                     console.log('employee => '+JSON.stringify(employee))
                 });
+                toast.success("Updated Employee successfully!",{position: toast.POSITION.TOP_CENTER,autoClose: false});
             }
 
     }
@@ -68,6 +74,8 @@ class CreateEmployeeComponent extends Component {
     //         } 
     //     )
     // }
+
+
 
     cancel(){
         this.props.history.push('/employees');

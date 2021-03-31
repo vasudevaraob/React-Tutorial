@@ -1,5 +1,11 @@
 import React, { Component } from 'react'
 import EmployeeService from '../services/EmployeeService'
+import { AiFillDelete } from "react-icons/ai";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
+toast.configure()
 
 class ListEmployeeComponent extends Component {
 
@@ -25,6 +31,7 @@ class ListEmployeeComponent extends Component {
         EmployeeService.deleteEmployee(id).then( res => {
             this.setState({employees: this.state.employees.filter(employee => employee.id !== id)});
         });
+        toast.success("Deleted successfully!",{position: toast.POSITION.TOP_CENTER});
     }
 
     editEmployee(id){
@@ -70,7 +77,7 @@ class ListEmployeeComponent extends Component {
                                             <td> {employee.emailId}</td>
                                              <td>
                                                 <button onClick={ () => this.editEmployee(employee.id)} className="btn btn-info">Update</button>
-                                               <button style={{ marginLeft: "10px" }} onClick={() => this.deleteEmployee(employee.id)} className="btn btn-danger">Delete </button>
+                                               <button style={{ marginLeft: "10px" }} onClick={() => this.deleteEmployee(employee.id)} className="btn btn-danger"><AiFillDelete></AiFillDelete> </button>
                                                <button style={{ marginLeft: "10px" }} onClick={() => this.viewEmployee(employee.id)} className="btn btn-info">View </button>
                                             </td> 
                                         </tr>

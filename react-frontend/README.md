@@ -34,4 +34,30 @@ You will also see any lint errors in the console.
 
     render Expression with in template {this.getTitle()}
     event.target.value -- bind the value from input text field  (this.setState({firstName: event.target.value}))
+
+
+# React Icons
+
+npm install react-icons --save
+import { IconName } from "react-icons/ai";
+
+https://react-icons.github.io/react-icons/
+
+# React-Tostify:
+
+https://fkhadra.github.io/react-toastify/introduction/
+
+npm install --save react-toastify
+
+toast.configure()
+toast.success("Deleted successfully!",{position: toast.POSITION.TOP_CENTER});
+toast.success("Updated Employee successfully!",{position: toast.POSITION.TOP_CENTER,autoClose: false});
+
+# React Modal:
+
+http://reactcommunity.org/react-modal/
+
+npm install react-modal
+
+
     
