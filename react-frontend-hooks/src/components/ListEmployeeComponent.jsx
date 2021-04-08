@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import EmployeeService from '../services/EmployeeService'
+import EmployeeService, { deleteEmployee, getAllEmployees } from '../services/EmployeeService'
 import { AiFillDelete } from "react-icons/ai";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -21,14 +21,14 @@ class ListEmployeeComponent extends Component {
     }
     
      componentDidMount(){
-         EmployeeService.getAllEmployees().then(
+         getAllEmployees().then(
              (response)=> {
                  this.setState({employees: response.data})
              });
      }
 
     deleteEmployee(id){
-        EmployeeService.deleteEmployee(id).then( res => {
+        deleteEmployee(id).then( res => {
             this.setState({employees: this.state.employees.filter(employee => employee.id !== id)});
         });
         toast.success("Deleted successfully!",{position: toast.POSITION.TOP_CENTER});

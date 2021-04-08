@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import EmployeeService from '../services/EmployeeService'
+import { createEmployee, getEmployeeById, updateEmployee } from '../services/EmployeeService'
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -30,7 +30,7 @@ class CreateEmployeeComponent extends Component {
         }
         else{
 
-            EmployeeService.getEmployeeById(this.state.id).then(
+            getEmployeeById(this.state.id).then(
                 (res) => {
                     let employee = res.data
                     this.setState({firstName: employee.firstName,lastName: employee.lastName,emailId: employee.emailId})
@@ -46,7 +46,7 @@ class CreateEmployeeComponent extends Component {
             console.log('employee => '+JSON.stringify(employee))
 
             if(this.state.id === '_add'){
-                EmployeeService.createEmployee(employee).then(
+                createEmployee(employee).then(
                              (res) => {
                                  this.props.history.push('/employees');
                                  console.log('employee => '+JSON.stringify(employee))
@@ -54,7 +54,7 @@ class CreateEmployeeComponent extends Component {
                        )
                        toast.success("Added Employee successfully!",{position: toast.POSITION.TOP_CENTER,autoClose: 8000});
             } else {
-                EmployeeService.updateEmployee(employee, this.state.id).then( res => {
+                updateEmployee(employee, this.state.id).then( res => {
                     this.props.history.push('/employees');
                     console.log('employee => '+JSON.stringify(employee))
                 });

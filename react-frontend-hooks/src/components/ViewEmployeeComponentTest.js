@@ -1,15 +1,15 @@
 import React,{useEffect,useState} from 'react'
-import EmployeeService from '../services/EmployeeService'
+import { getEmployeeById } from '../services/EmployeeService'
 
-function ViewEmployeeComponentTest() {
+function ViewEmployeeComponentTest(props) {
 
     const [employee, setEmployee] = useState({})
-    const [id, setId] = useState(16)
+    const [id, setId] = useState(props.match.params.id)
     
 
     useEffect(() => {
-        EmployeeService.getEmployeeById({id}).then(res => {
-            setEmployee({ employee: res.data });
+        getEmployeeById(id).then(res => {
+            setEmployee(res.data);
         })
     },[id])
 
