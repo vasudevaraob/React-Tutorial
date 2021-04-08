@@ -23,8 +23,9 @@ Maintained by FB,More starters on Github,Hug Community(Stack Overflow),In Demand
 	javascript:-
 			- this keyword
 			- filter()
-			- map() 
+			- map()
 			- reduce()
+			-
 	ES6:- 
 			- let&const
 				Let--> have block scope
@@ -46,6 +47,8 @@ Maintained by FB,More starters on Github,Hug Community(Stack Overflow),In Demand
 			- object literals
 			- rest and spread operations 
 			- distructing assignment
+			- Array Destrecture is for useState hook
+			- Spread Operator
 
 3.React from Scrach
 			- Fundamentals

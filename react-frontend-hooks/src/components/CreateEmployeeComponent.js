@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import EmployeeService from '../services/EmployeeService'
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
@@ -39,8 +39,6 @@ class CreateEmployeeComponent extends Component {
         }
 
     }
-
-
 
     saveOrUpdateEmployee(e){
             e.preventDefault();

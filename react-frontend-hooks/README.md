@@ -59,10 +59,5 @@ http://reactcommunity.org/react-modal/
 
 npm install react-modal
 
-# react-idle-timer
-
-npm install react-idle-timer --save
-https://www.npmjs.com/package/react-idle-timer
-
 
     
