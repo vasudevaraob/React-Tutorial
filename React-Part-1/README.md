@@ -49,6 +49,8 @@ Maintained by FB,More starters on Github,Hug Community(Stack Overflow),In Demand
 			- distructing assignment
 			- Array Destrecture is for useState hook
 			- Spread Operator
+			
+https://www.taniarascia.com/es6-syntax-and-feature-overview
 
 3.React from Scrach
 			- Fundamentals
